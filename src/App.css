@@ -1,21 +1,14 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +17,30 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.BudgetUI {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 5em;
+  color: white;
+  background-color: dodgerblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Budget {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ExpenseItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ExpenseForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
