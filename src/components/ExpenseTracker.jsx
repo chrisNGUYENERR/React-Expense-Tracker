@@ -11,10 +11,10 @@ function ExpenseTracker(props) {
                 Budget:
                 <Budget />
             </div>
-            <div>
+            <div className='ExpenseList'>
                 <Expenses />
             </div>
-            <div>
+            <div className='ExpenseForm'>
                 <AddExpenseForm />
             </div>
         </div>

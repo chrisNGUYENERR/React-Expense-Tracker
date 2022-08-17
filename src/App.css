@@ -31,16 +31,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: navy;
 }
 
-.ExpenseItem {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.ExpenseList {
+  overflow-y: scroll;
 }
 
 .ExpenseForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
 }

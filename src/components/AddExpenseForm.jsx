@@ -13,18 +13,15 @@ function AddExpenseForm(props) {
     const [expenseInfo, setExpenseInfo] = useState({
         expenseName: '',
         expenseCost: '',
+        expenseId: 0
     });
 
 
     const addExpense = (e) => {
         e.preventDefault();
         dispatch(setBudget(expenseInfo))
-        let a = dispatch((setExpenseList(expenseInfo)))
-        console.log(a)
-        
-        // setExpenseInfo({...expenseInfo, expenseId: Math.random()})
-
-
+        dispatch(setExpenseList(expenseInfo))
+        setExpenseInfo({...expenseInfo, expenseId: Math.random()})
     }
 
 
