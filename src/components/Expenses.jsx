@@ -16,7 +16,7 @@ function Expenses(props) {
     return (
         <ul className='list-group'>
                 {expenseList.map((expense, index) => {
-                    return <ExpenseItem key={index} name={expense.expenseName} cost={expense.expenseCost} />
+                    return <ExpenseItem key={index} id={expense.expenseId} name={expense.expenseName} cost={expense.expenseCost} />
                 })}
         </ul>
     );

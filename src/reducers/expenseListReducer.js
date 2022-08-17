@@ -8,6 +8,8 @@ export const expenseListReducer = (state = initialState, action) => {
               ...state,
               payload
           ]
+      case 'DELETE_EXPENSE':
+        return state.filter(expense => expense.expenseId !== payload)
       default:
           return state
   }
