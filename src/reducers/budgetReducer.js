@@ -9,7 +9,6 @@ export const budgetReducer = (state = initialState, action) => {
             return {...state, budget: state.budget - payload.expenseCost}
         case 'NEW_BUDGET':
             return {...state, budget: state.budget + parseInt(payload)}
-            // return console.log(payload)
         default:
             return state;
     }
