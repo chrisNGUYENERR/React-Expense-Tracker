@@ -20,7 +20,7 @@
 .BudgetUI {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: 75vw;
   height: 50vh;
   margin-top: 5em;
   color: white;
@@ -31,10 +31,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: 36px;
   background-color: navy;
 }
 
 .ExpenseList {
+  padding: 1em;
   overflow-y: scroll;
 }
 
@@ -44,4 +46,30 @@
   margin-top: auto;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
+}
+
+.FormInputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.NameInput {
+  width: 70vw;
+}
+
+.CostInput {
+  width: 30vw;
+}
+
+.CurrencyList {
+  width: 8em;
+  color: black;
+}
+
+.CurrencyDropdown {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
 }

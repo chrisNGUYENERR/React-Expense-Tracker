@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,6 @@ import { setExpenseList } from '../actions/expenseListAction';
 
 
 function AddExpenseForm(props) {
-
 
     const dispatch = useDispatch()
     const [expenseInfo, setExpenseInfo] = useState({
@@ -23,8 +22,8 @@ function AddExpenseForm(props) {
     const clearInput2 = () => { textInput2.current.value = '' }
 
 
-    const addExpense = (e) => {
-        e.preventDefault();
+    const addExpense = (event) => {
+        event.preventDefault();
         dispatch(setBudget(expenseInfo))
         dispatch(setExpenseList(expenseInfo))
         setExpenseInfo({...expenseInfo, expenseId: Math.random()})
@@ -34,12 +33,12 @@ function AddExpenseForm(props) {
 
 
     return (
-        <Form>
-            <Form.Group className="mb-3">
-            <Form.Control placeholder="Enter Expense Name" ref={textInput1} onChange={(event) => setExpenseInfo({...expenseInfo, expenseName:event.target.value})} />
+        <Form className='FormInputs'>
+            <Form.Group className="NameInput">
+                <Form.Control placeholder="Enter Expense Name" ref={textInput1} onChange={(event) => setExpenseInfo({...expenseInfo, expenseName:event.target.value})} />
             </Form.Group>
-            <Form.Group className="mb-3">
-            <Form.Control placeholder="Enter Expense Cost" ref={textInput2} onChange={(event) => setExpenseInfo({...expenseInfo, expenseCost:event.target.value})} />
+            <Form.Group className="CostInput">
+                <Form.Control placeholder="Enter Expense Cost" ref={textInput2} onChange={(event) => setExpenseInfo({...expenseInfo, expenseCost:event.target.value})} />
             </Form.Group>
             <Button onClick={addExpense} type="submit">Submit</Button>
         </Form>
