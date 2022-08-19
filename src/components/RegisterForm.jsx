@@ -15,17 +15,12 @@ function RegisterForm(props) {
         formPassword: ''
     })
 
-
-    
     const registerUserInfo = (event) => {
         event.preventDefault();
-        dispatch(registerUser(userInfo))
-        alert('Account Created!')
-        navigate('/guapnarc')
-
+        dispatch(registerUser(userInfo));
+        alert('Account Created!');
+        navigate('/guapnarc');
     }
-
-
 
     return (
         <div className='Form'>

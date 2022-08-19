@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { setBudget } from '../actions/budgetAction';
 import { setExpenseList } from '../actions/expenseListAction';
 
-
 function AddExpenseForm(props) {
 
     const dispatch = useDispatch();
@@ -15,12 +14,10 @@ function AddExpenseForm(props) {
         expenseId: 0
     });
 
-
     const textInput1 = React.useRef();
     const textInput2 = React.useRef();
     const clearInput1 = () => { textInput1.current.value = '' }
     const clearInput2 = () => { textInput2.current.value = '' }
-
 
     const addExpense = (event) => {
         event.preventDefault();
@@ -30,7 +27,6 @@ function AddExpenseForm(props) {
         clearInput1();
         clearInput2();
     }
-
 
     return (
         <Form className='FormInputs'>
