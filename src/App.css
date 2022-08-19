@@ -4,17 +4,18 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100vw;
 }
 
 .App-header {
-  background-color: #282c34;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  padding-top: 1em;
 }
 
 .BudgetUI {
@@ -25,6 +26,7 @@
   margin-top: 5em;
   color: white;
   background-color: dodgerblue;
+  margin-top: 1em;
 }
 
 .Budget {
@@ -32,7 +34,7 @@
   flex-direction: row;
   justify-content: space-around;
   font-size: 36px;
-  background-color: navy;
+  background-color: rgba(14, 57, 101, 0.318);
 }
 
 .ExpenseList {
@@ -72,4 +74,25 @@
   display: flex;
   flex-direction: row;
   margin-left: auto;
+}
+
+.Form {
+  display: flex;
+  height: 75vh;
+  width: 30vw;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.LoginForm, .RegisterForm {
+  padding: 1em;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.NavLinks {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: flex-end;
 }
