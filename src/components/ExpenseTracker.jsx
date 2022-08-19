@@ -3,9 +3,10 @@ import AddExpenseForm from './AddExpenseForm';
 import Budget from './Budget';
 import Expenses from './Expenses';
 import Currency from './Currency';
-
+import { connect } from 'react-redux';
 
 function ExpenseTracker(props) {
+    console.log(props)
     return (
         <>
             <div className='CurrencyDropdown'>
@@ -13,7 +14,7 @@ function ExpenseTracker(props) {
             </div>
             <header className="App-header">
                 <h1>G u a p N a r c</h1>
-                <h5><em>Expense Tracker</em></h5>
+                <h5><em>{props.name}'s Expense Tracker</em></h5>
             </header>
             <div className='BudgetUI'>
                 <div className='Budget'>
@@ -31,4 +32,11 @@ function ExpenseTracker(props) {
     );
 }
 
-export default ExpenseTracker;
+
+const mapStateToProps = (state) => {
+    const name = state.registerUser.name
+    
+    return {name}
+}
+
+export default connect(mapStateToProps, null)(ExpenseTracker);
