@@ -8,7 +8,7 @@ import { setExpenseList } from '../actions/expenseListAction';
 
 function AddExpenseForm(props) {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const [expenseInfo, setExpenseInfo] = useState({
         expenseName: '',
         expenseCost: '',
