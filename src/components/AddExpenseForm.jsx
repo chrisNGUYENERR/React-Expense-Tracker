@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
@@ -32,8 +32,8 @@ function AddExpenseForm(props) {
 
 
 
-    const textInput1 = React.useRef();
-    const textInput2 = React.useRef();
+    const textInput1 = useRef();
+    const textInput2 = useRef();
     const clearInput1 = () => { textInput1.current.value = '' }
     const clearInput2 = () => { textInput2.current.value = '' }
 
