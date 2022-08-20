@@ -13,6 +13,24 @@ function AddExpenseForm(props) {
         expenseCost: '',
         expenseId: 0
     });
+    const [isValidName, setIsValidName] = useState(false)
+    const [isValidCost, setIsValidCost] = useState(false)
+
+    const handleExpenseName = (event) => {
+        setIsValidName(event.target.value.length >= 4);
+        setExpenseInfo({...expenseInfo, expenseName:event.target.value})
+    }
+
+    const handleExpenseCost = (event) => {
+        const isValidCost = /^\d*\.?\d*$/.test(event.target.value)
+        setIsValidCost(isValidCost)
+        setExpenseInfo({...expenseInfo, expenseCost:event.target.value})
+    }
+
+    const isButtonDisabled = isValidName && isValidCost
+
+
+
 
     const textInput1 = React.useRef();
     const textInput2 = React.useRef();
@@ -31,12 +49,12 @@ function AddExpenseForm(props) {
     return (
         <Form className='FormInputs'>
             <Form.Group className="NameInput">
-                <Form.Control placeholder="Enter Expense Name" ref={textInput1} onChange={(event) => setExpenseInfo({...expenseInfo, expenseName:event.target.value})} />
+                <Form.Control placeholder="Enter Expense Name"  ref={textInput1} onChange={handleExpenseName} />
             </Form.Group>
             <Form.Group className="CostInput">
-                <Form.Control placeholder="Enter Expense Cost" ref={textInput2} onChange={(event) => setExpenseInfo({...expenseInfo, expenseCost:event.target.value})} />
+                <Form.Control placeholder="$0.00" type='number' ref={textInput2} onChange={handleExpenseCost} />
             </Form.Group>
-            <Button onClick={addExpense} type="submit">Submit</Button>
+            <Button onClick={addExpense} disabled={!isButtonDisabled} type="submit">Submit</Button>
         </Form>
     );
 }

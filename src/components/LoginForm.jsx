@@ -13,6 +13,21 @@ function LoginForm(props) {
         formEmail: '',
         formPassword: ''
     })
+    const [isValidEmail, setIsValidEmail] = useState(false)
+    const [isValidPassword, setIsValidPassword] = useState(false)
+
+    const handleUserEmail = (event) => {
+        const isValidEmail = /(.+)@(.+){2,}\.(.+){2,}/.test(event.target.value);
+        setIsValidEmail(isValidEmail)
+        setLoginInfo({...loginInfo, formEmail: event.target.value})
+    }
+
+    const handleUserPassword = (event) => {
+        setIsValidPassword(event.target.value.length >= 2);
+        setLoginInfo({...loginInfo, formPassword: event.target.value})
+    }
+
+    const isButtonDisabled = isValidEmail && isValidPassword
 
 
     const loginUserInfo = (event) => {
@@ -28,14 +43,14 @@ function LoginForm(props) {
             <Form className='LoginForm'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email Address:</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" onChange={(event) => setLoginInfo({...loginInfo, formEmail: event.target.value})} />
+                    <Form.Control type="email" placeholder="Enter email" onChange={handleUserEmail} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password:</Form.Label>
-                    <Form.Control type="password" placeholder="Password" onChange={(event) => setLoginInfo({...loginInfo, formPassword: event.target.value})} />
+                    <Form.Control type="password" placeholder="Password" onChange={handleUserPassword} />
                 </Form.Group>
-                <Button onClick={loginUserInfo} variant="primary" type="submit">
+                <Button onClick={loginUserInfo} disabled={!isButtonDisabled} variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
