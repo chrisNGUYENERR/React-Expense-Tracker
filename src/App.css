@@ -21,12 +21,14 @@
 .BudgetUI {
   display: flex;
   flex-direction: column;
+  margin: auto;
   width: 75vw;
   height: 50vh;
   margin-top: 5em;
-  color: white;
-  background-color: rgb(84, 86, 89);
+  color: rgb(0, 0, 0);
+  border: 1px solid #000000;
   margin-top: 1em;
+  backdrop-filter: blur(5px);
 }
 
 .Budget {
@@ -73,21 +75,50 @@
 .CurrencyDropdown {
   display: flex;
   flex-direction: row;
-  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .Form {
   display: flex;
-  height: 75vh;
-  width: 30vw;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
+  width: 500px;
+  height: 70vh;
+}
+
+.LoginFormBg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/assets/loginBGImage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.RegisterFormBg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/assets/registerBGImage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.AppBg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/assets/appBGImage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .LoginForm, .RegisterForm {
   padding: 1em;
   border: 1px solid;
   border-color: #000000;
+  backdrop-filter: blur(5px);
 }
 
 .NavLinks {

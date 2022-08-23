@@ -30,7 +30,7 @@ function RegisterForm(props) {
     }
 
     const handleUserPassword = (event) => {
-        setIsValidPassword(event.target.value.length >= 2);
+        setIsValidPassword(event.target.value.length >= 5);
         setUserInfo({...userInfo, formPassword: event.target.value})
     }
 
@@ -46,27 +46,29 @@ function RegisterForm(props) {
     }
 
     return (
-        <div className='Form'>
-            <h1>Sign-Up:</h1>
-            <Form className='RegisterForm'>
-                <Form.Group className="mb-3" controlId="formBasicNamel">
-                        <Form.Label>Full Name:</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Full Name" onChange={handleUserName} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email Address:</Form.Label>
-                    <Form.Control type="email" placeholder="Email" onChange={handleUserEmail} />
-                </Form.Group>
+        <div className='RegisterFormBg'>
+            <div className='Form'>
+                <h1>Sign-Up:</h1>
+                <Form className='RegisterForm'>
+                    <Form.Group className="mb-3" controlId="formBasicNamel">
+                            <Form.Label>Full Name:</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Full Name" onChange={handleUserName} />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email Address:</Form.Label>
+                        <Form.Control type="email" placeholder="Email" onChange={handleUserEmail} />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control type="password" placeholder="Password" onChange={handleUserPassword} />
-                </Form.Group>
-                <Button onClick={registerUserInfo} disabled={!isButtonDisabled} variant="primary" type="submit">
-                    Create Account
-                </Button>
-            </Form>
-            <Link to='/'>Already have an account?</Link>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password:</Form.Label>
+                        <Form.Control type="password" placeholder="Password" onChange={handleUserPassword} />
+                    </Form.Group>
+                    <Button onClick={registerUserInfo} disabled={!isButtonDisabled} variant="primary" type="submit">
+                        Create Account
+                    </Button>
+                </Form>
+                <Link to='/'>Already have an account?</Link>
+            </div>
         </div>
     );
 }

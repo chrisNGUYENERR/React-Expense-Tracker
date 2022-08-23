@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 function ExpenseTracker(props) {
     console.log(props)
     return (
-        <>
+        <div className='AppBg'>
             <div className='CurrencyDropdown'>
                 <Currency />
             </div>
@@ -28,7 +28,7 @@ function ExpenseTracker(props) {
                     <AddExpenseForm />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
