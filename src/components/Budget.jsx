@@ -14,7 +14,7 @@ function Budget(props) {
     });
 
     return (
-        <div style={{color: fontColor() ? '#FFFFFF' : '#FF0000'}}>
+        <div style={{color: fontColor() ? '#000000' : '#FF0000'}}>
             ${budget}
         </div>
     );

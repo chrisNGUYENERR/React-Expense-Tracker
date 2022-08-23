@@ -38,23 +38,25 @@ function LoginForm(props) {
 
 
     return (
-        <div className='Form'>
-            <h1>Please Login:</h1>
-            <Form className='LoginForm'>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email Address:</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" onChange={handleUserEmail} />
-                </Form.Group>
+        <div className='LoginFormBg'>
+            <div className='Form'>
+                <h1>Please Login:</h1>
+                <Form className='LoginForm'>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email Address:</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" onChange={handleUserEmail} />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control type="password" placeholder="Password" onChange={handleUserPassword} />
-                </Form.Group>
-                <Button onClick={loginUserInfo} disabled={!isButtonDisabled} variant="primary" type="submit">
-                    Login
-                </Button>
-            </Form>
-            <Link to='/register'>Need an account?</Link>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password:</Form.Label>
+                        <Form.Control type="password" placeholder="Password" onChange={handleUserPassword} />
+                    </Form.Group>
+                    <Button onClick={loginUserInfo} disabled={!isButtonDisabled} variant="primary" type="submit">
+                        Login
+                    </Button>
+                </Form>
+                <Link to='/register'>Need an account?</Link>
+            </div>
         </div>
     );
 }
